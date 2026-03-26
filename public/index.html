@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Study Lab</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">English Study Lab</p>
+          <h1>把 YouTube 字幕变成可学习的英语材料</h1>
+          <p class="hero-copy">支持原始字幕和双语字幕分开分析。双语字幕现在有单独的分析按钮。</p>
+        </div>
+        <div class="status-card">
+          <p class="status-label">当前模式</p>
+          <p class="status-value" id="modeBadge">本地演示分析</p>
+          <p class="status-note">如果是双语字幕，直接点击“双语字幕”区域下面的按钮即可。</p>
+        </div>
+      </header>
+
+      <section class="panel input-panel">
+        <div class="panel-heading">
+          <h2>内容输入</h2>
+          <div class="top-actions">
+            <button id="sampleButton" class="ghost-button">填充示例</button>
+            <button id="importTextButton" class="ghost-button">导入 TXT</button>
+            <button id="toggleInputButton" class="ghost-button hidden">展开输入</button>
+          </div>
+        </div>
+        <div id="inputPanelBody" class="input-grid">
+          <input id="textFileInput" type="file" accept=".txt,text/plain" class="hidden" />
+          <div class="input-block">
+            <label for="subtitleInput">原始字幕</label>
+            <textarea id="subtitleInput" placeholder="粘贴原始字幕或清洗前的字幕文本。"></textarea>
+            <div class="input-actions">
+              <button id="analyzeRawButton" class="primary-button">分析原始字幕</button>
+            </div>
+          </div>
+          <div class="input-block">
+            <label for="bilingualInput">双语字幕</label>
+            <textarea id="bilingualInput" placeholder="粘贴沉浸式翻译后的双语文本。系统会自动提取英文行用于分析，并保留中英配对。"></textarea>
+            <div class="input-actions">
+              <button id="analyzeBilingualButton" class="primary-button">分析双语字幕</button>
+            </div>
+          </div>
+          <div class="actions full-row">
+            <button id="analyzeButton" class="ghost-button">智能分析当前内容</button>
+            <button id="clearButton" class="ghost-button">清空</button>
+          </div>
+        </div>
+      </section>
+
+      <main class="workspace study-layout">
+        <section class="panel article-panel">
+          <div class="panel-heading">
+            <h2>清洗后的英文正文</h2>
+            <div class="top-actions">
+              <button id="toggleHighlightButton" class="ghost-button hidden">关闭高亮</button>
+              <button id="openArticleButton" class="ghost-button hidden">单独打开文章页</button>
+              <button id="downloadTextButton" class="ghost-button hidden">下载 TXT</button>
+            </div>
+          </div>
+          <div id="cleanedText" class="article-content empty">分析后，这里会显示按句换行的英文正文。</div>
+        </section>
+
+        <aside class="panel analysis-panel">
+          <div class="panel-heading">
+            <h2>复杂单词</h2>
+            <div class="top-actions">
+              <button id="perSentenceButton" class="ghost-button hidden active-mode">每句 1 词</button>
+              <button id="topHundredButton" class="ghost-button hidden">最长 100 词</button>
+            </div>
+          </div>
+          <div class="panel-subactions">
+            <span id="wordCountLabel" class="word-count muted">等待分析结果...</span>
+            <button id="exportWordsButton" class="ghost-button hidden">下载词表</button>
+          </div>
+          <div id="vocabularyList" class="stack-list muted">等待分析结果...</div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

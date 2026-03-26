@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cleaned Article Reader</title>
+    <link rel="stylesheet" href="/article.css" />
+  </head>
+  <body>
+    <main class="reader-shell">
+      <header class="reader-header">
+        <div>
+          <p class="eyebrow">Immersive Reader</p>
+          <h1>清洗后英文正文</h1>
+          <p class="reader-copy">可切换英文单语 / 英中对照，并支持复杂词高亮。</p>
+        </div>
+        <div class="reader-tools">
+          <button id="englishOnlyButton" class="tool-button active-mode">只看英文</button>
+          <button id="bilingualButton" class="tool-button">英中对照</button>
+          <button id="highlightToggleButton" class="tool-button">关闭高亮</button>
+        </div>
+      </header>
+
+      <article id="readerContent" class="reader-article">
+        <p class="empty">当前没有可显示的文章内容，请回到主页面重新分析或导入 TXT。</p>
+      </article>
+    </main>
+
+    <script src="/article.js"></script>
+  </body>
+</html>
